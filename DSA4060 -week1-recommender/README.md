@@ -41,9 +41,26 @@ Non-personalized recommenders provide a uniform ranked list of popular items to 
 
 ---
 
-## How to Run
+## Reflection Questions
 
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/sngithaigaaa/DSA4060-week1-recommender.git](https://github.com/sngithaigaaa/DSA4060-week1-recommender.git)
-   cd DSA4060-week1-recommender
+### 1. What did the popularity baseline do well?
+The popularity baseline provided a clean, robust, and transparent non-personalized recommendation list. It effectively filtered out obscure movies with artificially high ratings (e.g., a single 5-star review) and successfully identified universally acclaimed blockbusters that appeal to a general audience. It serves as a reliable default home-page recommendation for new users with no prior interaction history.
+
+### 2. Which users or movies might be disadvantaged by this approach?
+* **Users:** Niche viewers or fans of specific non-mainstream genres (e.g., foreign films, cult classics, independent documentaries) are disadvantaged because they receive the exact same mainstream list as everyone else[cite: 1].
+* **Movies:** Lesser-known, high-quality, or newly released movies are disadvantaged[cite: 1]. Because they lack a high volume of ratings, they cannot meet the minimum threshold ($m$) or score high enough on the weighted formula, leading to a "rich-get-richer" popularity bias[cite: 1].
+
+### 3. What additional data would be needed to personalize recommendations?
+To personalize recommendations, we would need:
+* **User demographic or explicit preference data:** Age, gender, self-selected favorite genres, or preferred languages[cite: 1].
+* **User interaction history:** Historical ratings, watch logs, clicks, or bookmark history per individual user ID[cite: 1].
+* **Contextual & implicit data:** Device type, time of day, location, or implicit feedback such as search history and watch duration[cite: 1].
+
+### 4. Which result would you use as the home-page baseline and why?
+I would use the **Weighted Score Baseline** as the home-page baseline[cite: 1]. Unlike the rigid cutoff of the minimum-rating threshold (which completely discards movies below $m$), the weighted Bayesian formula smoothly adjusts a movie's score based on statistical confidence[cite: 1]. It naturally pulls low-volume movies toward the global mean rating ($C$) while allowing highly rated movies with substantial evidence to rise to the top[cite: 1].
+
+### 5. What will you change in the next version of the recommender?
+In the next version, I will:
+1. Implement a **Content-Based Filtering** or **Collaborative Filtering** model (such as Matrix Factorization/SVD or user-item KNN) to deliver personalized recommendations based on individual user interaction vectors[cite: 1].
+2. Add explicit evaluation metrics (such as Precision@K, Recall@K, and RMSE) by splitting the interaction data into train and test sets[cite: 1].
+3. Introduce diversity and novelty metrics so the system does not solely recommend the top 10 well-known blockbusters[cite: 1].
