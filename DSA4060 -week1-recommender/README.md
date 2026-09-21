@@ -45,5 +45,5 @@ Non-personalized recommenders provide a uniform ranked list of popular items to 
 
 1. **Clone the Repository:**
    ```bash
-   git clone [https://github.com/YOUR-USERNAME/dsa4060-week1-recommender.git](https://github.com/YOUR-USERNAME/dsa4060-week1-recommender.git)
-   cd dsa4060-week1-recommender
+   git clone [https://github.com/sngithaigaaa/DSA4060-week1-recommender.git](https://github.com/sngithaigaaa/DSA4060-week1-recommender.git)
+   cd DSA4060-week1-recommender
